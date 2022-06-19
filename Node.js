@@ -14,7 +14,7 @@ class Node {
         this.data = data
         this.next = null
         //this is when DoublyLinkedList
-        this.tail = null
+        this.previous = null
     }
     setNextNode(node){
         /* this function is to check if the node argument is an instanceof 
@@ -26,10 +26,22 @@ class Node {
             throw new Error('Next node must be a member of the Node class.')
         }
     }
+    getPreviousNode(node){
+        if(node instanceof Node || node === null){
+            this.previous = node
+        }else{
+            throw new Error('Previous node must be a member of the Node class')
+        }
+
+    }
     getNextNode(){
         /** method returns the correct next node property by logging the call */
         return this.next
     }
+    getPreviousNode(){
+        return this.previous
+    }
+
 }
 
 const oldest = new Node('Jason')

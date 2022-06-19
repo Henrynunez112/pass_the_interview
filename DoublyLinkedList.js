@@ -16,8 +16,8 @@ const Node = require('./Node');
  * -The tail node's nodes next pointer is set to NULL
  * 
  * Function DoublyLinkedList takes
- * .addToHead()
- * .addToTail()
+ * .addToHead(data)
+ * .addToTail(data)
  * .removeHead()
  * .removeTail()
  * .removeByData(data)
@@ -27,6 +27,33 @@ const Node = require('./Node');
 
 class DoublyLinkedList {
     constructor(){
+        this.head = null
+        this.tail = null
+    }
 
+    addToHead(data){
+        const newHead = new Node(data)
+        const currentHead = this.head
+        if(currentHead){
+            currentHead.setPreviousNode(newHead)
+            newHead.setNextNode(currentHead)
+        }
+        this.head = newHead
+        if(!this.tail){
+            this.tail = newHead
+        }
+    }
+
+    addToTail(data){
+        const newTail = new Node(data)
+        const currentTail = this.tail
+        if(currentTail){
+            currentTail.setToNextNode(newTail)
+            newTail.setPreviousNode(currentTail)
+        }
+        this.tail = newTail
+        if(!this.head){
+            this.head = newTail
+        }
     }
 }
