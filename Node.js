@@ -13,6 +13,8 @@ class Node {
     constructor(data){
         this.data = data
         this.next = null
+        //this is when DoublyLinkedList
+        this.tail = null
     }
     setNextNode(node){
         /* this function is to check if the node argument is an instanceof 
