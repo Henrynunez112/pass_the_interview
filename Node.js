@@ -30,12 +30,21 @@ class Node {
     }
 }
 
-const firstNode = new Node("Henry");
-const secondNode = new Node("Jason");
-const thirdNode = new Node("Sulma")
-firstNode.setNextNode(secondNode);
-secondNode.setNextNode(thirdNode)
-console.log(firstNode.getNextNode())
+const oldest = new Node('Jason')
+const middle = new Node('Henry')
+const youngest = new Node('Sulma')
 
+youngest.setNextNode(middle)
+middle.setNextNode(oldest)
+
+let currentSibling = youngest
+let oldestName = ''
+
+while(currentSibling !== null){
+    oldestName = currentSibling.data
+    currentSibling = currentSibling.getNextNode()
+}
+
+console.log(`There goes ${oldestName}!`);
 
 module.export = Node
