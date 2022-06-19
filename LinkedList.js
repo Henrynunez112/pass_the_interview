@@ -41,6 +41,16 @@ class LinkedList {
             tail.setNextNode(new Node(data))
         }
     }
+    printList(){
+        let currentNode = this.head
+        let output = '<Head> '
+        while(currentNode !== null){
+            output += currentNode.data + ' '
+            currentNode.getNextNode()
+        }
+        output += '<tail>'
+        console.log(output)
+    }
 }
 
 module.export = LinkedList;
