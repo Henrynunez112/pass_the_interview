@@ -111,9 +111,7 @@ class DoublyLinkedList {
         }
         return nodeToRemove
     }
-
-
-
+    
     printList(){
         let currentNode = this.head
         let output = '<Head> '
