@@ -1,5 +1,14 @@
 import LinkedList from "./LinkedList"
+/**
+ * A stack is a data structure which contains an ordered set of data.
 
+Stacks provide three methods for interaction:
+
+Push - adds data to the “top” of the stack
+Pop - returns and removes data from the “top” of the stack
+Peek - returns data from the “top” of the stack without removing it
+
+ */
 class Stack {
     constructor(maxSize = Infinity){
         this.stack = new LinkedList()
