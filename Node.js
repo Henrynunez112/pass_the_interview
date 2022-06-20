@@ -13,7 +13,7 @@ class Node {
     constructor(data){
         this.data = data
         this.next = null
-        //this is when DoublyLinkedList
+        //when DoublyLinkedList
         this.previous = null
     }
     setNextNode(node){
