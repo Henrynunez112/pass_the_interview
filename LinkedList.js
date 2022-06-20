@@ -41,6 +41,34 @@ class LinkedList {
             tail.setNextNode(new Node(data))
         }
     }
+    removeHead(){
+        const removedHead = this.head
+        if(!removeHead){
+            return;
+        }
+        this.head = removedHead.getNextNode()
+        if(this.head){
+            this.head.setPreviousNode(null)
+        }
+        if(removedHead === this.tail){
+            this.removeTail()
+        }
+        return removedHead.data
+    }
+    removeTail(){
+        const removedTail = this.tail
+        if(!removeTail){
+            return;
+        }
+        this.tail = removedTail.getPreviousNode()
+        if(this.tail){
+            this.tail.setNextNode(null)
+        }
+        if(removedTail === this.head){
+            this.removeHead()
+        }
+        return removedTail.data
+    }
     printList(){
         let currentNode = this.head
         let output = '<Head> '
