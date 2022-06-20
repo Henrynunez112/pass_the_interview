@@ -45,6 +45,9 @@ class Queue{
             throw new Error('Queue is empty!')
         }
     }
+    peek(){
+        return this.queue.head.data
+    }
 }
 
 module.export = Queue
