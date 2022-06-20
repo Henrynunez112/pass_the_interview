@@ -1,11 +1,13 @@
 import LinkedList from "./LinkedList"
 
 class Stack {
-    constructor(){
+    constructor(maxSize = Infinity){
         this.stack = new LinkedList()
+        this.maxSize = maxSize
+        this.size = 0
     }
     peak(){
-        return this.stack.head
+        if(this.size > 0) return this.stack.head
     }
     push(value){
         this.stack.addToHead(value)
