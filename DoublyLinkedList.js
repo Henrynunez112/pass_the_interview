@@ -1,20 +1,20 @@
-const Node = require('./Node');
+const Node = require("./Node");
 /**
  * Doubly Linked List
- * 
+ *
  * -Just like a singly linked list, a doubly linked
  * list is compromised of a series of nodes.
- * 
+ *
  * -Each node contains data and TWO links to the
  * next and previous nodes in the list.
- * 
+ *
  * -The head node is the node at the beginning of the list,
  * the tail node is the node at the end of the list.
- * 
+ *
  * -The head node's previous pointer is set to NULL
- * 
+ *
  * -The tail node's nodes next pointer is set to NULL
- * 
+ *
  * Function DoublyLinkedList takes
  * .addToHead(data)
  * .addToTail(data)
@@ -22,106 +22,106 @@ const Node = require('./Node');
  * .removeTail()
  * .removeByData(data)
  * .printList()
- * 
+ *
  */
 
 class DoublyLinkedList {
-    constructor(){
-        this.head = null
-        this.tail = null
-    }
+  constructor() {
+    this.head = null;
+    this.tail = null;
+  }
 
-    addToHead(data){
-        const newHead = new Node(data)
-        const currentHead = this.head
-        if(currentHead){
-            currentHead.setPreviousNode(newHead)
-            newHead.setNextNode(currentHead)
-        }
-        this.head = newHead
-        if(!this.tail){
-            this.tail = newHead
-        }
+  addToHead(data) {
+    const newHead = new Node(data);
+    const currentHead = this.head;
+    if (currentHead) {
+      currentHead.setPreviousNode(newHead);
+      newHead.setNextNode(currentHead);
     }
+    this.head = newHead;
+    if (!this.tail) {
+      this.tail = newHead;
+    }
+  }
 
-    addToTail(data){
-        const newTail = new Node(data)
-        const currentTail = this.tail
-        if(currentTail){
-            currentTail.setToNextNode(newTail)
-            newTail.setPreviousNode(currentTail)
-        }
-        this.tail = newTail
-        if(!this.head){
-            this.head = newTail
-        }
+  addToTail(data) {
+    const newTail = new Node(data);
+    const currentTail = this.tail;
+    if (currentTail) {
+      currentTail.setToNextNode(newTail);
+      newTail.setPreviousNode(currentTail);
     }
+    this.tail = newTail;
+    if (!this.head) {
+      this.head = newTail;
+    }
+  }
 
-    removeHead(){
-        const removedHead = this.head
-        if(!removeHead){
-            return;
-        }
-        this.head = removedHead.getNextNode()
-        if(this.head){
-            this.head.setPreviousNode(null)
-        }
-        if(removedHead === this.tail){
-            this.removeTail()
-        }
-        return removedHead.data
+  removeHead() {
+    const removedHead = this.head;
+    if (!removeHead) {
+      return;
     }
-    removeTail(){
-        const removedTail = this.tail
-        if(!removeTail){
-            return;
-        }
-        this.tail = removedTail.getPreviousNode()
-        if(this.tail){
-            this.tail.setNextNode(null)
-        }
-        if(removedTail === this.head){
-            this.removeHead()
-        }
-        return removedTail.data
+    this.head = removedHead.getNextNode();
+    if (this.head) {
+      this.head.setPreviousNode(null);
     }
+    if (removedHead === this.tail) {
+      this.removeTail();
+    }
+    return removedHead.data;
+  }
+  removeTail() {
+    const removedTail = this.tail;
+    if (!removeTail) {
+      return;
+    }
+    this.tail = removedTail.getPreviousNode();
+    if (this.tail) {
+      this.tail.setNextNode(null);
+    }
+    if (removedTail === this.head) {
+      this.removeHead();
+    }
+    return removedTail.data;
+  }
 
-    removeByData(data) {
-        let nodeToRemove;
-        let currentNode = this.head
-        while(currentNode !== null){
-            if(currentNode.data === data){
-                nodeToRemove = currentData
-                break
-            }
-            currentNode = currentNode.getNextNode()
-        }
-        if(!nodeToRemove){
-            return null
-        }
-        if(nodeToRemove === this.head){
-            this.removeHead()
-        }else if(nodeToRemove === this.tail){
-            this.removeTail()
-        } else{
-            const nextNode = nodeToRemove.getNextNode()
-            const previousNode = nodeToRemove.getPreviousNode()
-            nextNode.setPreviousNode(previousNode)
-            previousNode.setNextNode(nextNode)
-        }
-        return nodeToRemove
+  removeByData(data) {
+    let nodeToRemove;
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      if (currentNode.data === data) {
+        nodeToRemove = currentData;
+        break;
+      }
+      currentNode = currentNode.getNextNode();
     }
+    if (!nodeToRemove) {
+      return null;
+    }
+    if (nodeToRemove === this.head) {
+      this.removeHead();
+    } else if (nodeToRemove === this.tail) {
+      this.removeTail();
+    } else {
+      const nextNode = nodeToRemove.getNextNode();
+      const previousNode = nodeToRemove.getPreviousNode();
+      nextNode.setPreviousNode(previousNode);
+      previousNode.setNextNode(nextNode);
+    }
+    return nodeToRemove;
+  }
 
-    printList(){
-        let currentNode = this.head
-        let output = '<Head> '
-        while(currentNode !== null){
-            output += currentNode.data + ' '
-            currentNode.getNextNode()
-        }
-        output += '<tail>'
-        console.log(output)
+  printList() {
+    let currentNode = this.head;
+    let output = "<Head> ";
+    while (currentNode !== null) {
+      output += currentNode.data + " ";
+      currentNode.getNextNode();
     }
+    output += "<tail>";
+    console.log(output);
+  }
 }
 
-module.export = DoublyLinkedList
+module.export = DoublyLinkedList;

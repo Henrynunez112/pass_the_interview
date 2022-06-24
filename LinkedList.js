@@ -1,84 +1,84 @@
-const Node = require('./Node');
+const Node = require("./Node");
 /**
  * Linked List
  * -Are compromised of Nodes
- * 
+ *
  * -The nodes contain a link to the next node
  * (and also the previous node for bidirectional linked lists)
- * 
+ *
  * -Can be unidirectional or bidirectional
- * 
+ *
  * - Are a basic data structure and form the basis for many
  * other data structure.
- * 
+ *
  * -Have a single head node, which serves as the first node
  * in the list
- * 
+ *
  * -Require some maintenance in order to add or remove nodes
- * 
+ *
  */
 
 class LinkedList {
-    constructor(){
-        this.head = null
+  constructor() {
+    this.head = null;
+  }
+  addToHead(data) {
+    const newHead = new Node(data);
+    const currentHead = this.head;
+    this.head = newHead;
+    if (currentHead) {
+      this.head.setNextNode(currentHead);
     }
-    addToHead(data){
-        const newHead = new Node(data)
-        const currentHead = this.head
-        this.head = newHead
-        if(currentHead){
-            this.head.setNextNode(currentHead)
-        }
+  }
+  addToTail(data) {
+    let tail = this.head;
+    if (!tail) {
+      this.head = new Node(data);
+    } else {
+      while (tail.getNextNode() !== null) {
+        tail = tail.getNextNode();
+      }
+      tail.setNextNode(new Node(data));
     }
-    addToTail(data){
-        let tail = this.head
-        if(!tail){
-            this.head = new Node(data)
-        }else{
-            while(tail.getNextNode() !== null){
-                tail = tail.getNextNode()
-            }
-            tail.setNextNode(new Node(data))
-        }
+  }
+  removeHead() {
+    const removedHead = this.head;
+    if (!removeHead) {
+      return;
     }
-    removeHead(){
-        const removedHead = this.head
-        if(!removeHead){
-            return;
-        }
-        this.head = removedHead.getNextNode()
-        if(this.head){
-            this.head.setPreviousNode(null)
-        }
-        if(removedHead === this.tail){
-            this.removeTail()
-        }
-        return removedHead.data
+    this.head = removedHead.getNextNode();
+    if (this.head) {
+      this.head.setPreviousNode(null);
     }
-    removeTail(){
-        const removedTail = this.tail
-        if(!removeTail){
-            return;
-        }
-        this.tail = removedTail.getPreviousNode()
-        if(this.tail){
-            this.tail.setNextNode(null)
-        }
-        if(removedTail === this.head){
-            this.removeHead()
-        }
-        return removedTail.data
+    if (removedHead === this.tail) {
+      this.removeTail();
     }
-    printList(){
-        let currentNode = this.head
-        let output = '<Head> '
-        while(currentNode !== null){
-            output += currentNode.data + ' '
-            currentNode.getNextNode()
-        }
-        output += '<tail>'
-        console.log(output)
+    return removedHead.data;
+  }
+  removeTail() {
+    const removedTail = this.tail;
+    if (!removeTail) {
+      return;
     }
+    this.tail = removedTail.getPreviousNode();
+    if (this.tail) {
+      this.tail.setNextNode(null);
+    }
+    if (removedTail === this.head) {
+      this.removeHead();
+    }
+    return removedTail.data;
+  }
+  printList() {
+    let currentNode = this.head;
+    let output = "<Head> ";
+    while (currentNode !== null) {
+      output += currentNode.data + " ";
+      currentNode.getNextNode();
+    }
+    output += "<tail>";
+    console.log(output);
+  }
 }
 
 module.export = LinkedList;

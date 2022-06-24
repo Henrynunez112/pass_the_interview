@@ -1,4 +1,4 @@
-import LinkedList from "./LinkedList"
+import LinkedList from "./LinkedList";
 /**
  * A stack is a data structure which contains an ordered set of data.
 
@@ -10,41 +10,41 @@ Peek - returns data from the “top” of the stack without removing it
 
  */
 class Stack {
-    constructor(maxSize = Infinity){
-        this.stack = new LinkedList()
-        this.maxSize = maxSize
-        this.size = 0
+  constructor(maxSize = Infinity) {
+    this.stack = new LinkedList();
+    this.maxSize = maxSize;
+    this.size = 0;
+  }
+  hasRoom() {
+    return this.size < this.maxSize;
+  }
+  isEmpty() {
+    return this.size === 0;
+  }
+  peak() {
+    if (!this.isEmpty()) {
+      if (this.size > 0) return this.stack.head;
+    } else {
+      return null;
     }
-    hasRoom(){
-        return this.size < this.maxSize
+  }
+  push(value) {
+    if (this.hasRoom()) {
+      this.stack.addToHead(value);
+      this.size++;
+    } else {
+      throw new Error("Stack is full");
     }
-    isEmpty(){
-        return this.size === 0
+  }
+  pop() {
+    if (!this.isEmpty()) {
+      const value = this.stack.removeHead();
+      this.size++;
+      return value;
+    } else {
+      throw new Error("Stack is empty");
     }
-    peak(){
-        if(!this.isEmpty()){
-            if(this.size > 0) return this.stack.head
-        }else{
-            return null
-        }
-    }
-    push(value){
-        if(this.hasRoom()){
-            this.stack.addToHead(value)
-            this.size++
-        }else{
-            throw new Error('Stack is full')
-        }
-    }
-    pop(){
-        if(!this.isEmpty()){
-            const value = this.stack.removeHead()
-            this.size++
-            return value
-        }else{
-            throw new Error('Stack is empty')
-        }
-    }
+  }
 }
 
-module.export = Stack
+module.export = Stack;

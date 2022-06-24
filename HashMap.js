@@ -1,5 +1,5 @@
-import LinkedList from './LinkedList'
-import Node from './Node.js'
+import LinkedList from "./LinkedList";
+import Node from "./Node.js";
 
 /**
  * Hash map: A key-value store that uses an array and a hashing function to save and retrieve values.
@@ -22,8 +22,8 @@ Recipe for retrieving from a hash table:
 
  */
 
-class HashMap{
-    constructor(){
-
-    }
+class HashMap {
+  constructor(size = 0) {
+    this.hashmap = new Array(size).fill(null);
+  }
 }
