@@ -26,4 +26,38 @@ class HashMap {
   constructor(size = 0) {
     this.hashmap = new Array(size).fill(null);
   }
+  /**
+   * The hashing function is the secret to efficiently storing and
+   * retrieving values in a hash map. A hashing function takes a key
+   * as input and returns an index within the hash map’s underlying array.
+   */
+  hash(key){
+    let hashCode = 0
+    for(let i = 0; i < key.length; i++){
+        hashCode += hashCode + key.charCodeAt(i)
+    }
+    return hashCode % this.hashmap.length
+  }
+
+  /**
+   * .assign() will handle the logic needed to take in a key-value
+   * pair and store the value at a particular index.
+   */
+  assign(key, value){
+    const arrayIndex = this.hash(key)
+    this.hashmap[arrayIndex] = value
+  }
+
+  /**
+   * To be a fully functional hash map, we have to be able to
+   * retrieve the values we are storing. To implement retrieval
+   * for our hash map we’ll create a new HashMap method, .retrieve().
+   * This method will make use of .hash()‘s deterministic nature to
+   * find the value we’re looking for in the hash map.
+   */
+  retrieve(key){
+    const arrayIndex = this.hash(key)
+    return this.hashmap[arrayIndex]
+    
+  }
 }
