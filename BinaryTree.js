@@ -16,12 +16,21 @@ class BinaryTree {
             if(!this.right){
                 this.right = new BinaryTree(value, this.depth + 1)
             }else{
-                this.right.insert(value)
-                
+                this.right.insert(value)                
             }
         }
     }
-
+    getNodeByValue(value){
+        if(value === this.value){
+            return this
+        }else if((this.left) && (value < this.value)){
+            return this.left.getNodeByValue(value)
+        }else if(this.right){
+            return this.right.getNodeByValue(value)
+        }else{
+            return null
+        }
+    }
 }
 
 module.export = BinaryTree
