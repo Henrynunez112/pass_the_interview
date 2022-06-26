@@ -31,6 +31,29 @@ class BinaryTree {
             return null
         }
     }
+    depthFirstTraversal(){
+        if(this.left){
+            this.left.depthFirstTraversal()
+        }
+        console.log(`Depth=${this.depth}, Value=${this.value}`);
+        if(this.right){
+            this.right.depthFirstTraversal()
+        }
+    }
 }
+
+const randomize = () => Math.floor(Math.random() * 40);
+const bt = new BinaryTree(15);
+let numbers = [];
+
+for (let i = 0; i < 10; i++) {
+  numbers.push(randomize());
+  bt.insert(numbers[i]);
+}
+
+console.log(`Inserted [ ${numbers} ] to binary tree`);
+
+console.log('Depth First Traversal');
+bt.depthFirstTraversal();
 
 module.export = BinaryTree
