@@ -42,18 +42,18 @@ class BinaryTree {
     }
 }
 
-const randomize = () => Math.floor(Math.random() * 40);
-const bt = new BinaryTree(15);
-let numbers = [];
+// const randomize = () => Math.floor(Math.random() * 40);
+// const bt = new BinaryTree(15);
+// let numbers = [];
 
-for (let i = 0; i < 10; i++) {
-  numbers.push(randomize());
-  bt.insert(numbers[i]);
-}
+// for (let i = 0; i < 10; i++) {
+//   numbers.push(randomize());
+//   bt.insert(numbers[i]);
+// }
 
-console.log(`Inserted [ ${numbers} ] to binary tree`);
+// console.log(`Inserted [ ${numbers} ] to binary tree`);
 
-console.log('Depth First Traversal');
-bt.depthFirstTraversal();
+// console.log('Depth First Traversal');
+// bt.depthFirstTraversal();
 
 module.export = BinaryTree
