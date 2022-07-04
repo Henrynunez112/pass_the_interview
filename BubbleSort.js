@@ -1,3 +1,4 @@
+//Quadratic O(n^2)
 const sorting = (arr, indexOne, indexTwo) =>{
     const temp = arr[indexTwo]
     arr[indexTwo] = arr[indexOne]
