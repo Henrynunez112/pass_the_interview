@@ -14,6 +14,7 @@ const mergeSort = (arr) =>{
 const merge = (left, right) =>{
     let sortedArray = []
     while(left.length && right.length){
+        
         if(left[0] < right[0]){
             sortedArray.push(left[0])
             left.shift()
@@ -22,7 +23,10 @@ const merge = (left, right) =>{
             right.shift()
         }
     }
+
     return [...sortedArray, ...left, ...right]
 } 
 const inputArr = [3, 5, 2, 90, 4, 7];
 console.log(mergeSort(inputArr))
+
+module.export = { mergeSort }
