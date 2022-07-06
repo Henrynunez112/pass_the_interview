@@ -1,3 +1,4 @@
+//node based implementation
 class Node {
     constructor(value){
         this.value = value
@@ -35,6 +36,8 @@ class Stack {
         return this.size
     }
 }
+exports.module = Node
+
 
 const newStack = new Stack()
 
