@@ -146,7 +146,8 @@
 
 // console.log(solve("*'&ABCDabcde12345"))
 
-const hasOneChar = (str) =>{
-    return [...new Set(str)].length === 1
-}
-console.log(hasOneChar('aaaaa'))
+// const hasOneChar = (str) =>{
+//     return [...new Set(str)].length === 1
+// }
+// console.log(hasOneChar('aaaaa'))
+
