@@ -151,3 +151,17 @@
 // }
 // console.log(hasOneChar('aaaaa'))
 
+// const removeDuplicateWords = (s) =>{
+//     const result = []
+//     let split = s.split(' ')
+//     for(let i = 0; i < split.length; i++){
+//         if(!result.includes(split[i])){
+//             result.push(split[i])
+//         }
+//     }
+//     return result.sort().join(' ')
+
+
+// }
+
+// console.log(removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'))
