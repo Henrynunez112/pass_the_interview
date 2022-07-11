@@ -165,3 +165,66 @@
 // }
 
 // console.log(removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'))
+
+// const findSmallestInt = (arr) =>{
+//     let lowest = arr[0]
+//     let i = 1
+//     while(i !== arr.length){
+//         if(arr[i] < lowest){
+//             lowest = arr[i]
+//         }
+//         i++
+//     }
+//     return lowest
+// } 
+// console.log(findSmallestInt([78,56,232,12,8]))
+
+// const findSmallestIntTwo = (arr) =>{
+//     let lowest = arr[0]
+//     for(let i = 0; i < arr.length; i++){
+//         if(arr[i] < lowest){
+//             lowest = arr[i]
+//         }
+//     }
+//     return lowest
+// }
+// console.log(findSmallestIntTwo([78,56,232,12,8]))
+
+// function spinWords(string){
+//     //TODO Have fun :)
+//     let result = []
+//     let splitArr = string.split(" ")
+//     for(let i = 0; i < splitArr.length; i++){
+//         if(splitArr[i].length >= 5){
+//             result.push(splitArr[i].split("").reverse().join(""))
+
+//         }else{
+//             result.push(splitArr[i])
+//         }
+//     }
+    
+//       return result.join(" ")
+    
+//   }
+//   console.log(spinWords("This is another test"))
+
+
+// const sumMul = (n, m) =>{
+//     if(m < n) return "INVALID"
+//     let i = m
+//     let result = 0
+//     while(n <= i){
+//         if(i % n === 0){
+//             console.log(i)
+//             result += i
+//         }
+//         i--
+
+//     }
+//     return result
+// }
+// console.log(sumMul(2, -7))
+
+// console.log(6 % 3 === 0)
+
+
