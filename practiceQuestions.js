@@ -258,29 +258,38 @@
 // }
 // console.log(isSquare(-1))
 
-const strangeMath = (n,k) =>{
-    let result = 0
-    let arr = []
-    for(let i = 1; i <= n; i++){
-        arr.push(i)
-    }
-    arr.sort()
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i] === k){
-            result = i + 1
-        }
-    }
-    return result
-}
+// const strangeMath = (n,k) =>{
+//     let result = 0
+//     let arr = []
+//     for(let i = 1; i <= n; i++){
+//         arr.push(i)
+//     }
+//     arr.sort()
+//     for(let i = 0; i < arr.length; i++){
+//         if(arr[i] === k){
+//             result = i + 1
+//         }
+//     }
+//     return result
+// }
 
-const strangeMathTwo = (n, k) =>{
-    let arr = []
-    for(let i = 0; i <= n; i++){
-        arr.push(i)
-    }
-    return arr.sort().indexOf(k)
-}
-console.log(strangeMathTwo(12, 2))
+// const strangeMathTwo = (n, k) =>{
+//     let arr = []
+//     for(let i = 0; i <= n; i++){
+//         arr.push(i)
+//     }
+//     return arr.sort().indexOf(k)
+// }
+// console.log(strangeMathTwo(12, 2))
 
+let obj = {first: "henry", last: "nunez", age: 23}
+const convertHashToArr = (hash) =>{
+    let result = []
+    for(key in hash){
+        result.push([`${key}`, hash[key]])
+    }
+    return result.sort()
+}
+console.log(convertHashToArr(obj))
 
 
