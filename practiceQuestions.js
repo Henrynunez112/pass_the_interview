@@ -282,14 +282,37 @@
 // }
 // console.log(strangeMathTwo(12, 2))
 
-let obj = {first: "henry", last: "nunez", age: 23}
-const convertHashToArr = (hash) =>{
-    let result = []
-    for(key in hash){
-        result.push([`${key}`, hash[key]])
-    }
-    return result.sort()
-}
-console.log(convertHashToArr(obj))
+// let obj = {first: "henry", last: "nunez", age: 23}
+// const convertHashToArr = (hash) =>{
+//     let result = []
+//     for(key in hash){
+//         result.push([`${key}`, hash[key]])
+//     }
+//     return result.sort()
+// }
+// console.log(convertHashToArr(obj))
+
+
+// let mixed_capitals = [{"state" : 'Maine', capital: 'Augusta'}, {country: 'Spain', "capital" : "Madrid"}]
+// const capital = (arr) =>{
+// //create an arr to hold the new strings
+// let newArr = []
+// //loop through the arr of objects
+// for(let i = 0; i < arr.length; i++){
+//     if(arr[i].state){
+//          newArr.push(`The capital of ${arr[i].state} of ${arr[i].capital}`)
+//     }
+//     if(arr[i].country){
+//         newArr.push(`The capital of ${arr[i].country} of ${arr[i].capital}`)
+//     }
+
+// }
+// //return the arr
+// return newArr
+// }
+
+// console.log(capital(mixed_capitals))
+
+
 
 
