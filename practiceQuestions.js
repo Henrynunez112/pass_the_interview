@@ -227,4 +227,60 @@
 
 // console.log(6 % 3 === 0)
 
+// const remainder = (n, m) =>{
+
+//     return (n > m  ? n % m : m % n)
+// }
+
+// console.log(remainder(13, 72))
+
+// const halvingSum = (n) =>{
+//     let sum = 0
+//     while(n >= 1){
+//         console.log(n)
+//         sum += n
+//         n = Math.floor((n*1)/ 2)
+//     }
+//     return sum
+// }
+// console.log(halvingSum(25))
+
+// const isSquare = (n) =>{
+//     let i = 0
+//     while(i < n){
+//         if( i * i === n){
+//             return true
+//         }
+//         i++
+//     }
+//     return false
+
+// }
+// console.log(isSquare(-1))
+
+const strangeMath = (n,k) =>{
+    let result = 0
+    let arr = []
+    for(let i = 1; i <= n; i++){
+        arr.push(i)
+    }
+    arr.sort()
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] === k){
+            result = i + 1
+        }
+    }
+    return result
+}
+
+const strangeMathTwo = (n, k) =>{
+    let arr = []
+    for(let i = 0; i <= n; i++){
+        arr.push(i)
+    }
+    return arr.sort().indexOf(k)
+}
+console.log(strangeMathTwo(12, 2))
+
+
 
