@@ -313,6 +313,8 @@
 
 // console.log(capital(mixed_capitals))
 
+// const validSpacing = () =>{
 
-
-
+// }
+// let str = 'c o d e w a r s'
+// console.log(str.split(""))
