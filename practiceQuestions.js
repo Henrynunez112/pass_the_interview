@@ -389,3 +389,31 @@
 // }
 
 // console.log(replaceNumber([1,2,3,4,5,6,7,8,9,0]))
+
+// const twoSums = (arr, target) =>{
+//     let result = []
+//    for(let i = 0; i < arr.length; i++){
+//     for(let j = 1; j < arr.length; j++){
+//         if(arr[j] === target - arr[i]){
+//             return [i,j]
+//         }
+//     }
+//    }
+//    return result
+// }
+
+const twoSums = (arr, target) =>{
+    let hash = {}
+    for(let i = 0; i < arr.length; i++){
+        hash[arr[i]] = i
+    }
+    for(let j = 0; j < arr.length; j++){
+        let complements = target - arr[j]
+        if(hash.hasOwnProperty(complements) && hash[complements] !== j){
+            return [hash[complements],j]
+        }
+    }
+    return null
+
+}
+console.log(twoSums([1,4,3], 5))
