@@ -318,3 +318,74 @@
 // }
 // let str = 'c o d e w a r s'
 // console.log(str.split(""))
+
+
+// const reverseVowels = (s) => {
+//     let strArr = s.split("")
+//     let vowelsArr = ["a", "e", "i", "o", "u"]
+//     let onePointer = 0
+//     let secondPointer = strArr.length - 1
+//     while(onePointer < secondPointer){
+//         if(!vowelsArr.includes(strArr[onePointer])){
+//             onePointer++
+//         }
+//         if(!vowelsArr.includes(strArr[secondPointer])){
+//             secondPointer--
+//         }
+//         if(vowelsArr.includes(strArr[onePointer]) && vowelsArr.includes(strArr[secondPointer])){
+//             let temp = strArr[onePointer]
+//             strArr[onePointer] = strArr[secondPointer]
+//             strArr[secondPointer] = temp
+//             onePointer++
+//             secondPointer--
+//         }
+//     }
+
+//     return strArr.join("")
+    
+// };
+
+// console.log(reverseVowels("goodbye"))
+
+// const highAndLow = (s) =>{
+//     const numArr = s.split(" ").sort((a,b) => b - a)
+  
+//     return `${numArr[0]} ${numArr[numArr.length - 1]}`
+// }
+// console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"))
+
+// const sortArray = (arr) =>{
+//     let one = 0
+//     let second = arr.length - 1
+//     while(one < second){
+//          if(arr[one] % 2 === 0){
+//             one++
+//          }
+//          if(arr[second] % 2 === 0){
+//             second--
+//          }
+//          if(arr[one] % 2 !== 0 && arr[second] % 2 !== 0 && arr[one] > arr[second]){
+//             let temp = arr[one]
+//             arr[one] = arr[second]
+//             arr[second] = temp
+//             one++
+//             second--
+//          }
+
+
+//     }
+//     return arr
+// }
+
+// console.log(sortArray([5, 3,  2, 8, 1, 4, 11]))
+
+// const replaceNumber = (numbers) =>{
+//     let phone = "(xxx) xxx-xxxx"
+//     for(let i = 0; i < numbers.length; i++){
+//         phone = phone.replace('x', numbers[i])
+//     }
+//     return phone
+
+// }
+
+// console.log(replaceNumber([1,2,3,4,5,6,7,8,9,0]))
