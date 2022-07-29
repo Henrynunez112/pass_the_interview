@@ -15,8 +15,15 @@ class Graph {
   }
 
   print() {
-    this.vertices.forEach((vertex) => vertex.print);
+    this.vertices.forEach((vertex) => vertex.print());
   }
 }
 
 module.exports = Graph;
+
+const trainNetwork = new Graph();
+
+const atlantaStation = trainNetwork.addVertex("Atlanta");
+const newYorkStation = trainNetwork.addVertex("New York");
+
+trainNetwork.print();
