@@ -50,4 +50,4 @@ class Queue {
   }
 }
 
-module.export = Queue;
+module.exports = Queue;

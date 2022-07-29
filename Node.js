@@ -59,4 +59,4 @@ while (currentSibling !== null) {
 
 console.log(`There goes ${oldestName}!`);
 
-module.export = Node;
+module.exports = Node;

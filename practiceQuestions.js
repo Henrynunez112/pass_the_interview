@@ -402,18 +402,49 @@
 //    return result
 // }
 
-const twoSums = (arr, target) =>{
-    let hash = {}
-    for(let i = 0; i < arr.length; i++){
-        hash[arr[i]] = i
-    }
-    for(let j = 0; j < arr.length; j++){
-        let complements = target - arr[j]
-        if(hash.hasOwnProperty(complements) && hash[complements] !== j){
-            return [hash[complements],j]
-        }
-    }
-    return null
+// const twoSums = (arr, target) =>{
+//     let hash = {}
+//     for(let i = 0; i < arr.length; i++){
+//         hash[arr[i]] = i
+//     }
+//     for(let j = 0; j < arr.length; j++){
+//         let complements = target - arr[j]
+//         if(hash.hasOwnProperty(complements) && hash[complements] !== j){
+//             return [hash[complements],j]
+//         }
+//     }
+//     return null
 
-}
-console.log(twoSums([1,4,3], 5))
+// }
+// console.log(twoSums([1,4,3], 5))
+
+// const addObj = (inputs) =>{
+//     let array = [...arg]
+//     let result = {}
+//     for(let i = 0; i < args.length; i++){
+//         for(let key in args[i]){
+//             if(!result[key]){
+//                 result[key] = args[i][key]
+//             }else{
+//                 result[key] += args[i][key]
+//             }
+//         }
+//     }
+//     return result
+// }
+function combine() {
+    let arr = [...arguments]
+    let result = {}
+    for(let i = 0; i < arguments.length; i++){
+      for(let key in arr[i]){
+        if(!result[key]){
+          result[key] = arguments[i][key]
+        }else{
+          result[key] += arguments[i][key]
+        }
+      }
+    }
+    return result
+  }
+
+console.log(combine({ a: 10, b: 20, c: 30 }, { a: 3, c: 6, d: 3 }))

@@ -47,6 +47,4 @@ class Stack {
   }
 }
 
-module.export = Stack;
-
-
+module.exports = Stack;

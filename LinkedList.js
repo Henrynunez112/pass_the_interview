@@ -69,15 +69,14 @@ class LinkedList {
     }
     return removedTail.data;
   }
-  findNodeRecursively(data, currentNode = this.head){
-      if(currentNode === null){
-          return null
-      }else if(currentNode.data === data){
-          return currentNode
-      }else{
-          return this.findNodeRecursively(data, currentNode.next)
-      }
-
+  findNodeRecursively(data, currentNode = this.head) {
+    if (currentNode === null) {
+      return null;
+    } else if (currentNode.data === data) {
+      return currentNode;
+    } else {
+      return this.findNodeRecursively(data, currentNode.next);
+    }
   }
   printList() {
     let currentNode = this.head;
@@ -91,4 +90,4 @@ class LinkedList {
   }
 }
 
-module.export = LinkedList;
+module.exports = LinkedList;

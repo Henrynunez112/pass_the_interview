@@ -1,5 +1,5 @@
 //Quadratic O(n^2)
-export default function swap(arr, indexOne, indexTwo) {
+exports default function swap(arr, indexOne, indexTwo) {
     const temp = arr[indexTwo]
     arr[indexTwo] = arr[indexOne]
     arr[indexOne] = temp
@@ -21,4 +21,4 @@ const bubbleSort = (arr) =>{
 
 console.log(bubbleSort([5, 6, 2, 3, 1, 4]))
 
-module.export = {bubbleSort}
+module.exports = {bubbleSort}
