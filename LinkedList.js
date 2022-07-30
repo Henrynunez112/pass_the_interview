@@ -43,12 +43,12 @@ class LinkedList {
   }
   removeHead() {
     const removedHead = this.head;
-    if (!removeHead) {
+    if (!removedHead) {
       return;
     }
     this.head = removedHead.getNextNode();
     if (this.head) {
-      this.head.setPreviousNode(null);
+      this.head.getPreviousNode(null);
     }
     if (removedHead === this.tail) {
       this.removeTail();

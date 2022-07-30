@@ -42,21 +42,21 @@ class Node {
   }
 }
 
-const oldest = new Node("Jason");
-const middle = new Node("Henry");
-const youngest = new Node("Sulma");
+// const oldest = new Node("Jason");
+// const middle = new Node("Henry");
+// const youngest = new Node("Sulma");
 
-youngest.setNextNode(middle);
-middle.setNextNode(oldest);
+// youngest.setNextNode(middle);
+// middle.setNextNode(oldest);
 
-let currentSibling = youngest;
-let oldestName = "";
+// let currentSibling = youngest;
+// let oldestName = "";
 
-while (currentSibling !== null) {
-  oldestName = currentSibling.data;
-  currentSibling = currentSibling.getNextNode();
-}
+// while (currentSibling !== null) {
+//   oldestName = currentSibling.data;
+//   currentSibling = currentSibling.getNextNode();
+// }
 
-console.log(`There goes ${oldestName}!`);
+// console.log(`There goes ${oldestName}!`);
 
 module.exports = Node;

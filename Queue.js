@@ -1,4 +1,4 @@
-import LinkedList from "./LinkedList";
+const LinkedList = require("./LinkedList");
 
 /**
  * Queues
@@ -38,7 +38,7 @@ class Queue {
   }
   dequeue() {
     if (!this.isEmpty()) {
-      this.queue.removeHead();
+      const data = this.queue.removeHead();
       this.size--;
       return data;
     } else {
