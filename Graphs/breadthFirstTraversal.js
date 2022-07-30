@@ -1,4 +1,5 @@
 const testGraph = require("./testGraph");
+const Graph = require("./Graph");
 const Queue = require("../Queue");
 
 const breadthFirstTraversal = (start) => {
@@ -19,3 +20,18 @@ const breadthFirstTraversal = (start) => {
 };
 
 breadthFirstTraversal(testGraph.vertices[0]);
+
+// const graph = new Graph(true, false);
+// const startNode = graph.addVertex("start");
+// const a = graph.addVertex("a");
+// const b = graph.addVertex("b");
+// const c = graph.addVertex("c");
+
+// graph.addEdge(startNode, a);
+// graph.addEdge(startNode, b);
+// graph.addEdge(startNode, c);
+// graph.addEdge(a, c);
+// graph.addEdge(b, c);
+// graph.addEdge(c, b);
+
+// breadthFirstTraversal(graph.vertices[0]);
