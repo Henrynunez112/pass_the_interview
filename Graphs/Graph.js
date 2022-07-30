@@ -81,18 +81,18 @@ module.exports = Graph;
 
 // graph.print();
 
-const friendGroup = new Graph(true, false);
-const jimmy = friendGroup.addVertex("Jimmy");
-const sally = friendGroup.addVertex("Sally");
-const michael = friendGroup.addVertex("Michael");
-const sonny = friendGroup.addVertex("Sonny");
+// const friendGroup = new Graph(true, false);
+// const jimmy = friendGroup.addVertex("Jimmy");
+// const sally = friendGroup.addVertex("Sally");
+// const michael = friendGroup.addVertex("Michael");
+// const sonny = friendGroup.addVertex("Sonny");
 
-friendGroup.addEdge(sonny, jimmy, 15);
-friendGroup.addEdge(sonny, michael, 2);
+// friendGroup.addEdge(sonny, jimmy, 15);
+// friendGroup.addEdge(sonny, michael, 2);
 
-friendGroup.addEdge(jimmy, michael, 8);
-friendGroup.addEdge(jimmy, sally, 1);
+// friendGroup.addEdge(jimmy, michael, 8);
+// friendGroup.addEdge(jimmy, sally, 1);
 
-friendGroup.addEdge(sally, michael, 4);
+// friendGroup.addEdge(sally, michael, 4);
 
-friendGroup.print();
+// friendGroup.print();
