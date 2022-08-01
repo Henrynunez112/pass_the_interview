@@ -10,12 +10,25 @@ const testGraph = require("./testGraph");
 
 const dijkstras = (graph, startingVertex) => {
   let distances = {};
+  let previous = {};
   graph.vertices.forEach((vertex) => {
-    if (!distances[vertex.data]) {
-      distances[vertex.data] = Infinity;
+    distances[vertex.data] = Infinity;
+    previous[vertex.data] = null;
+  });
+  distances[startingVertex.data] = 0;
+  const vertex = startingVertex;
+  vertex.edges.forEach((edge) => {
+    const alternate = edge.weight + distances[vertex.data];
+    const neighborValue = edge.end.data;
+    if (alternate < distances[neighborValue]) {
+      distances[neighborValue] = alternate;
+      previous[neighborValue] = vertex;
     }
   });
+
+  return { distances, previous };
 };
 const results = dijkstras(testGraph, testGraph.vertices[0]);
+console.log(results);
 
 module.exports = dijkstras;
